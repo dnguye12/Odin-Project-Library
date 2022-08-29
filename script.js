@@ -1,3 +1,5 @@
+let library = [];
+
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -13,5 +15,3 @@ function Book(title, author, pages, read) {
         console.log(`${this.name} by ${this.author}, ${this.pages} pages, ${red}`);
     }
 };
-
-Book.info();

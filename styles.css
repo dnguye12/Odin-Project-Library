@@ -138,3 +138,11 @@ margin-bottom: 3%;
 #submit:hover {
     background-color: #76ec71;
 }
+
+#lib {
+    display: grid;
+    background-color: rebeccapurple;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+}
