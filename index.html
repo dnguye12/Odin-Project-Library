@@ -15,6 +15,23 @@
     </header>
     <main>
         <button type="button">+ Add book</button>
+        <div id="lib">
+
+        </div>
+        <div id="overlay"></div>
+        <div id="add">
+            <h2>Add new book</h2>
+            <form>
+                <input type="text" name="title" id="ftitle" placeholder="Title" required><br>
+                <input type="text" name="author" id="fauthor" placeholder="Author" required><br>
+                <input type="number" name="pages" id="fpages" placeholder="Pages" required><br>
+                <div id="checkbox">
+                <label for="fread">Have you read it?</label>
+                <input type="checkbox" name="read" id="fread" required>
+            </div>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
     </main>
 </body>
 <script src="script.js"></script>
