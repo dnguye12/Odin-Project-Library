@@ -20,22 +20,28 @@ let BtnAdd = document.getElementById("BtnAdd");
 let overlay = document.getElementById("overlay");
 let add = document.getElementById("add");
 
-overlay.addEventListener("click", function () {
-
-    if (overlay.classList.contains("overlay-active")) {
-
-        overlay.classList.toggle("overlay-active");
-        add.classList.toggle("add-active");
-
-    }
-
-});
-
+let overlayShown = false;
 BtnAdd.addEventListener("click", function () {
 
-    overlay.classList.toggle("overlay-active");
-    add.classList.toggle("add-active");
+   if( !overlayShown) {
+    overlay.style.visibility = "visible";
+    add.style.visibility = "visible";
+    overlay.style.opacity = "1";
+    add.style.opacity = "1";
+    add.style.transform = "translate(-50%, -50%)";
+    overlayShown = true;
+   }
+});
 
+overlay.addEventListener("click", function() {
+    if(overlayShown) {
+        overlay.style.visibility = "hidden";
+    add.style.visibility = "hidden";
+    overlay.style.opacity = "0";
+    add.style.opacity = "0";
+    add.style.transform = "translate(-500%, -50%)";
+        overlayShown = false;
+    }
 });
 
 let form = document.querySelector("form");
@@ -43,8 +49,10 @@ let ftitle = document.getElementById("ftitle");
 let fauthor = document.getElementById("fauthor");
 let fpages = document.getElementById("fpages");
 let red = document.getElementById("checkbox");
-form.addEventListener("submit", function () {
-
-    let helper = new Book(ftitle.textContent, fauthor.textContent, fpages.textContent, red.checked);
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let helper = new Book(ftitle.value, fauthor.value, fpages.value, red.checked);
     helper.info();
+    library.append(helper);
+    console.log(library.length);
 });

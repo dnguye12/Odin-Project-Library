@@ -69,16 +69,13 @@ main button:hover {
     background-color: rgba(0,0,0,0.5);
     position: absolute;
     width: 100%;
-    height: 0;
+    height: 100%;
+    opacity: 0;
     top: 0;
     left: 0;
-    opacity: 0;
     transition: opacity 350ms;
-}
-
-.overlay-active {
-    height: 100% !important;
-    opacity: 1 !important;
+    visibility: hidden;
+    cursor: pointer;
 }
 
 #add {
@@ -86,24 +83,20 @@ main button:hover {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-500%, -50%);
     transform: translate(-500%, -50%);
+    opacity: 0;
     width: 300px;
     border-radius: 10px;
     padding: 1% 5%;
     display: block;
-    opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     text-align: center;
-    transition: opacity,transform 350ms;
+    transition: transform, opacity 350ms;
+    visibility: hidden;
 }
 
-.add-active {
-    transform: translate(-50%, -50%) !important;
-    opacity: 1 !important;
-}
 
 #add form input[type="text"], input[type="number"] {
     display: block;
